@@ -1,0 +1,17 @@
+{
+    "name": "flagoon/image-downloader-server",
+    "description": "Application to download pictures from internet.",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Paweł Kochanek",
+            "email": "flagoon@o2.pl"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Flagoon\\": "src/Flagoon"
+        }
+    }
+}
