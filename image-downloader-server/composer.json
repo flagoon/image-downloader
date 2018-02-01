@@ -8,7 +8,9 @@
             "email": "flagoon@o2.pl"
         }
     ],
-    "require": {},
+    "require": {
+        "monolog/monolog": "^1.23"
+    },
     "autoload": {
         "psr-4": {
             "Flagoon\\": "src/Flagoon"
