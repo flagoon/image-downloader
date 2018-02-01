@@ -6,3 +6,11 @@
  * Time: 21:58
  */
 declare(strict_types=1);
+
+require __DIR__ . '/vendor/autoload.php';
+
+use Flagoon\ImageDownloader;
+
+$imgDownloader = new ImageDownloader();
+$imgDownloader->setUrl('https://www.verbanent.pl/ksiazki/card/orson/scott');
+$imgDownloader->extractImages();
