@@ -48,16 +48,35 @@ class Helper
         }
     }
 
+    /**
+     * Checks if file exists locally.
+     *
+     * @param string $name name of the file we are looking.
+     * @return bool
+     */
     public function checkIfImageExists(string $name): bool
     {
         return file_exists('./resources/images/' . $name);
     }
 
+    /**
+     * Compares if two files are identical. Returns true or false.
+     *
+     * @param string $fileOne first file
+     * @param string $fileTwo second file
+     * @return bool
+     */
     public function compareFiles(string $fileOne, string $fileTwo): bool
     {
         return $fileOne === $fileTwo;
     }
 
+    /**
+     * Adds a random hash to the name of the file.
+     *
+     * @param string $name name to add hash to.
+     * @return string
+     */
     public function addHash(string $name): string
     {
         $separateName= explode('.', $name);
