@@ -13,4 +13,4 @@ use Flagoon\ImageDownloader;
 
 $imgDownloader = new ImageDownloader();
 $imgDownloader->setUrl('https://www.verbanent.pl/ksiazki/card/orson/scott');
-$imgDownloader->extractImages();
+$imgDownloader->saveImages();
