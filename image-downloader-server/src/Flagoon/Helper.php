@@ -60,7 +60,8 @@ class Helper
 
     public function addHash(string $name): string
     {
-        $array = explode('.', $name);
-        return $array[0] . 'dupa.' . $array[1];
+        $separateName= explode('.', $name);
+        $hash = substr(md5((string)rand(1,100)), -4);
+        return "{$separateName[0]}_$hash.$separateName[1]";
     }
 }
