@@ -27,7 +27,12 @@ class ImageDownloader
         $helper = Helper::Instance();
         $htmlPage = file_get_contents($this->url);
         $imagesLinks = $helper->extractImages($htmlPage);
-        foreach ($imagesLinks as $link) {
+        $this->saveImages($imagesLinks);
+    }
+
+    private function saveImages(array $links): void
+    {
+        foreach ($links as $link) {
             $download = file_get_contents($link);
             file_put_contents('./resources/images/' . basename($link), $download);
         }
