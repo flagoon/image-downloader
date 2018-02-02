@@ -24,13 +24,12 @@ class ImageDownloader
 
     public function extractImages():void
     {
+        $helper = Helper::Instance();
         $htmlPage = file_get_contents($this->url);
-        $matches = [];
-        preg_match_all('/<img.{1,}src="(.*\.jpg)".*>/U', $htmlPage, $matches);
-        $images = $matches[1];
-        foreach ($images as $image) {
-            $download = file_get_contents($image);
-            file_put_contents('./resources/images/' . preg_replace('/[0-9]*/', '', basename($image)), $download);
+        $imagesLinks = $helper->extractImages($htmlPage);
+        foreach ($imagesLinks as $link) {
+            $download = file_get_contents($link);
+            file_put_contents('./resources/images/' . basename($link), $download);
         }
     }
 }
