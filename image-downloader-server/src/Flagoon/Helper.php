@@ -47,4 +47,20 @@ class Helper
             return self::$instance;
         }
     }
+
+    public function checkIfImageExists(string $name): bool
+    {
+        return file_exists('./resources/images/' . $name);
+    }
+
+    public function compareFiles(string $fileOne, string $fileTwo): bool
+    {
+        return $fileOne === $fileTwo;
+    }
+
+    public function addHash(string $name): string
+    {
+        $array = explode('.', $name);
+        return $array[0] . 'dupa.' . $array[1];
+    }
 }
