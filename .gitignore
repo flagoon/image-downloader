@@ -1,2 +1,4 @@
 .idea/
 /image-downloader-server/vendor/
+/image-downloader-server/composer.lock
+/.php_cs.cache
