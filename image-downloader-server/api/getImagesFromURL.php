@@ -6,8 +6,13 @@
  * Time: 22:37
  */
 declare(strict_types=1);
-use Flagoon\ImageDownloader;
+namespace Flagoon;
 
 $imgDownloader = new ImageDownloader();
 $imgDownloader->setUrl('test.php');
+
+
+echo $imgDownloader->getUrl();
 $imgDownloader->saveImages();
+
+echo "<div>JHellos</div>";
