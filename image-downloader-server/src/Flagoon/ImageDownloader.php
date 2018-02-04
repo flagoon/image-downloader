@@ -65,6 +65,7 @@ class ImageDownloader
                     $name = $helper->addHash($name);
                 }
             }
+            file_put_contents($_SERVER['DOCUMENT_ROOT'] . '/resources/images/' . $name, $download);
         }
         echo json_encode(["message" => "Images downloaded"]);
     }
