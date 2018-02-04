@@ -50,23 +50,22 @@ class ImageDownloader
      */
     public function saveImages(): void
     {
-        $links = $this->getImageLinks();
         $helper = Helper::Instance();
+        $links = $this->getImageLinks();
 
         foreach ($links as $link) {
             $name = basename($link);
             $download = file_get_contents($link);
 
             if ($helper->checkIfImageExists($name)) {
-                $localImage = file_get_contents('./resources/images/' . $name);
+                $localImage = file_get_contents($_SERVER['DOCUMENT_ROOT'] . '/resources/images/' . $name);
                 if ($helper->compareFiles($download, $localImage)) {
                     continue;
                 } else {
                     $name = $helper->addHash($name);
                 }
             }
-
-            file_put_contents('./resources/images/' . $name, $download);
         }
+        echo json_encode(["message" => "Images downloaded"]);
     }
 }
