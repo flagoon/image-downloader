@@ -6,13 +6,10 @@
  * Time: 22:37
  */
 declare(strict_types=1);
-namespace Flagoon;
 
-$imgDownloader = new ImageDownloader();
-$imgDownloader->setUrl('test.php');
+require_once('../src/Flagoon/ImageDownloader.php');
+require_once('../src/Flagoon/Helper.php');
 
-
-echo $imgDownloader->getUrl();
+$imgDownloader = new Flagoon\ImageDownloader();
+$imgDownloader->setUrl('https://www.verbanent.pl/ksiazki/card/orson/scott');
 $imgDownloader->saveImages();
-
-echo "<div>JHellos</div>";
