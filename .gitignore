@@ -2,3 +2,4 @@
 /image-downloader-server/vendor/
 /image-downloader-server/composer.lock
 /.php_cs.cache
+/image-presenter/node_modules/
