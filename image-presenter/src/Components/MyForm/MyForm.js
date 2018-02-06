@@ -19,10 +19,8 @@ class MyForm extends React.Component {
     })
       .then(response => {
         const { message, images } = response.data;
-        console.log(message);
         if (message) {
           const filteredImages = [...new Set(images)];
-          console.log(images);
           this.setState({ message, images: filteredImages });
         }
       })
