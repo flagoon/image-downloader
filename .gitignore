@@ -3,3 +3,4 @@
 /image-downloader-server/composer.lock
 /.php_cs.cache
 /image-presenter/node_modules/
+/image-downloader-server/.php_cs.cache
